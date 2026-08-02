@@ -7,6 +7,7 @@ let message = null
 /*------------------------ Cached Element References ------------------------*/
 
 const allChoiceElements = document.querySelectorAll('.choice-el')
+const resultDisplayElement = document.querySelector('#result-display')
 
 /*-------------------------------- Functions --------------------------------*/
 function play(event){
@@ -19,23 +20,25 @@ function play(event){
 
     // 3. compare the choices and decide who wins
     if(playerChoice === computerChoice){
-        console.log('DRAW')
+        message = `DRAW, Computer picked ${computerChoice} and you picked ${playerChoice}`
     }
     else if(playerChoice === 'rock' && computerChoice === 'scissors'){
-        console.log('You win')
+        message = `You win, Computer picked ${computerChoice} and you picked ${playerChoice}`
     }
     else if(playerChoice === 'paper' && computerChoice === 'rock'){
-        console.log('You win')
+        message = `You win, Computer picked ${computerChoice} and you picked ${playerChoice}`
     }
     else if(playerChoice === 'scissors' && computerChoice=== 'paper'){
-        console.log('You win')
+        message = `You win, Computer picked ${computerChoice} and you picked ${playerChoice}`
     }
     else{
-        console.log('You Lost')
+        message = `You Lose, Computer picked ${computerChoice} and you picked ${playerChoice}`
+
     }
 
-    // 4. show the result
 
+    // 4. show the result
+    resultDisplayElement.textContent = message
 }
 /*----------------------------- Event Listeners -----------------------------*/
 
