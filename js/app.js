@@ -20,25 +20,25 @@ function play(event){
 
     // 3. compare the choices and decide who wins
     if(playerChoice === computerChoice){
-        message = `DRAW, Computer picked ${computerChoice} and you picked ${playerChoice}`
+        message = `<b>DRAW</b>, Computer picked ${computerChoice} and you picked ${playerChoice}`
     }
     else if(playerChoice === 'rock' && computerChoice === 'scissors'){
-        message = `You win, Computer picked ${computerChoice} and you picked ${playerChoice}`
+        message = `You <b class="win">Win</b>, Computer picked ${computerChoice} and you picked ${playerChoice}`
     }
     else if(playerChoice === 'paper' && computerChoice === 'rock'){
-        message = `You win, Computer picked ${computerChoice} and you picked ${playerChoice}`
+        message = `You <b class="win">Win</b>, Computer picked ${computerChoice} and you picked ${playerChoice}`
     }
     else if(playerChoice === 'scissors' && computerChoice=== 'paper'){
-        message = `You win, Computer picked ${computerChoice} and you picked ${playerChoice}`
+        message = `You <b class="win">Win</b>, Computer picked ${computerChoice} and you picked ${playerChoice}`
     }
     else{
-        message = `You Lose, Computer picked ${computerChoice} and you picked ${playerChoice}`
+        message = `You <b class="lose">Lose</b>, Computer picked ${computerChoice} and you picked ${playerChoice}`
 
     }
 
 
     // 4. show the result
-    resultDisplayElement.textContent = message
+    resultDisplayElement.innerHTML = message
 }
 /*----------------------------- Event Listeners -----------------------------*/
 
