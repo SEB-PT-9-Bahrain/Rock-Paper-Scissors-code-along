@@ -5,16 +5,21 @@ let playerChoice = null
 let computerChoice = null
 let message = null
 /*------------------------ Cached Element References ------------------------*/
-const rockElement = document.querySelector('#rock')
-const paperElement = document.querySelector('#paper')
-const scissorsElement = document.querySelector('#scissors')
 
 const allChoiceElements = document.querySelectorAll('.choice-el')
 
-console.log(allChoiceElements[2])
 /*-------------------------------- Functions --------------------------------*/
-function play(){
-    console.log('clicked on choice')
+function play(event){
+    // 1. save the user choice in the playerChoice variable
+    playerChoice = event.target.id
+
+    // 2. generate the computer choice at random
+    // console.log(Math.random() * 3)
+    console.log(Math.floor(Math.random() * 3))
+
+    // 3. compare the choices and decide who wins
+
+    // 4. show the result
 
 }
 /*----------------------------- Event Listeners -----------------------------*/
