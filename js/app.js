@@ -10,13 +10,20 @@ const allChoiceElements = document.querySelectorAll('.choice-el')
 const resultDisplayElement = document.querySelector('#result-display')
 
 /*-------------------------------- Functions --------------------------------*/
-function play(event){
-    // 1. save the user choice in the playerChoice variable
-    playerChoice = event.target.id
 
+function getPlayerChoice(event){
+ // 1. save the user choice in the playerChoice variable
+    playerChoice = event.target.id
+}
+
+function getComputerChoice(){
     // 2. generate the computer choice at random
     // console.log(Math.random() * 3)
     computerChoice = choices[Math.floor(Math.random() * 3)]
+
+}
+
+function compare(){
 
     // 3. compare the choices and decide who wins
     if(playerChoice === computerChoice){
@@ -36,9 +43,22 @@ function play(event){
 
     }
 
+}
+
+function displayWinner(){
 
     // 4. show the result
     resultDisplayElement.innerHTML = message
+}
+
+function play(event){
+   getPlayerChoice(event)
+   getComputerChoice()
+   compare()
+   displayWinner()
+
+
+
 }
 /*----------------------------- Event Listeners -----------------------------*/
 
