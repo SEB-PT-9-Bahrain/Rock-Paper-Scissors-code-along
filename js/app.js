@@ -15,9 +15,24 @@ function play(event){
 
     // 2. generate the computer choice at random
     // console.log(Math.random() * 3)
-    console.log(Math.floor(Math.random() * 3))
+    computerChoice = choices[Math.floor(Math.random() * 3)]
 
     // 3. compare the choices and decide who wins
+    if(playerChoice === computerChoice){
+        console.log('DRAW')
+    }
+    else if(playerChoice === 'rock' && computerChoice === 'scissors'){
+        console.log('You win')
+    }
+    else if(playerChoice === 'paper' && computerChoice === 'rock'){
+        console.log('You win')
+    }
+    else if(playerChoice === 'scissors' && computerChoice=== 'paper'){
+        console.log('You win')
+    }
+    else{
+        console.log('You Lost')
+    }
 
     // 4. show the result
 
